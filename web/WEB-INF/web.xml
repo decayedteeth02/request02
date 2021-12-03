@@ -33,21 +33,25 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!--    配置编码过滤器-->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <!--        encoding编码格式-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
+        <!--        同时开启请求和相应的编码-->
         <init-param>
             <param-name>forceEncoding</param-name>
             <param-value>true</param-value>
         </init-param>
     </filter>
-
+    <!--    设置拦截哪些请求来过滤-->
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
+        <!--        拦截规则-->
         <servlet-name>springmvc</servlet-name>
     </filter-mapping>
 
