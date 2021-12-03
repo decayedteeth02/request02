@@ -4,9 +4,14 @@ package cn.mvc.controllers;
 import cn.mvc.entity.Role;
 import cn.mvc.entity.User;
 import cn.mvc.entity.UserDTO;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.security.Principal;
 
 @Controller
 public class ParamsController {
@@ -47,6 +52,26 @@ public class ParamsController {
     public String params02(UserDTO userDTO){
         System.out.println(userDTO);
 
+        return "/index.jsp";
+    }
+
+    //获取servlet的API
+//        HttpServletRequest
+//            HttpServletResponse
+//    HttpSession
+//Principal  获取安全协议相关
+//Local 当前语言
+
+
+    @RequestMapping("/servlet")
+    public String servlet(HttpServletRequest request, HttpServletResponse response){
+//        request.getSession();
+//        request.getUserPrincipal();
+//        request.getLocale();
+//
+        String name=request.getParameter("name");
+        System.out.println(name);
+        request.setAttribute("name",name);
         return "/index.jsp";
     }
 }
