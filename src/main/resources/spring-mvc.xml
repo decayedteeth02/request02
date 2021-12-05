@@ -10,12 +10,12 @@
     </context:component-scan>
 
 <!--    访问静态资源-->
-    <mvc:annotation-driver/>
+<!--    <mvc:annotation-driver/>-->
 
 <!--    将映射的地址直接指向静态资源文件夹-->
 <!--    <mvc:resources mapping="/images/**" location="/images/"/>-->
 
-    <mvc:default-servlet-handler/>
+<!--    <mvc:default-servlet-handler/>-->
 
 
 
